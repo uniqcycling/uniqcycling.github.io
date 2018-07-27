@@ -35,6 +35,7 @@ body {
 
 ol, ul {
 	list-style: none;
+	text-align: left;
 }
 
 blockquote, q {
@@ -49,6 +50,7 @@ blockquote, q {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+	text-align: left;
 }
 
 body {
