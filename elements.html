@@ -322,7 +322,8 @@
 								<!-- Form -->
 									<h2>Form</h2>
 
-									<form method="post" action="#">
+									<!--<form method="post" action="mailto:uniq-cycling@gmail.com?subject=Object" name="envoi" enctype="text/plain">-->
+									<form method="post" action="mail.php">
 										<div class="row gtr-uniform">
 											<div class="col-6 col-12-xsmall">
 												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
@@ -436,7 +437,7 @@ print 'It took ' + i + ' iterations to sort the deck.';
 				<!-- Footer -->
 					<footer id="footer">
 						<section>
-							<form method="post" action="#">
+							<form method="post" action="https://formspree.io/uniq.cycling@gmail.com">
 								<div class="fields">
 									<div class="field">
 										<label for="name">Name</label>
@@ -445,6 +446,10 @@ print 'It took ' + i + ' iterations to sort the deck.';
 									<div class="field">
 										<label for="email">Email</label>
 										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="email">Subject</label>
+										<input type="text" name="_subject" id="suject" />
 									</div>
 									<div class="field">
 										<label for="message">Message</label>
