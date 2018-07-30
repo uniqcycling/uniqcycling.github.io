@@ -26,8 +26,8 @@
 					<nav id="nav">
 						<ul class="links">
 							<li><a href="index.html">UNIQ Cycling</a></li>
-							<li class="active"><a href="productUniqForRoad.html">UNIQ For Road</a></li>
-							<li><a href="tests.html">Tests</a></li>
+							<li class="active"><a href="productUniqForRoad.html">Produits</a></li>
+							<li><a href="tests.html">Témoignages</a></li>
 							<li><a href="news.html">News</a></li>
 							<li><a href="aboutUs.html">A propos de UNIQ Cycling</a></li>
 						</ul>
@@ -45,28 +45,37 @@
 								<header class="major">
 									<h1>Commande</h1>
 								</header>
-								<p>Il est actuellement possible de retirer votre paire de roues UNIQ à notre atelier. Pour cela, veuillez nous contacter en remplissant le formulaire ci-dessous.</p>
+								<p>Votre paire de roues UNIQ est à retirer à notre atelier. Pour cela, veuillez nous contacter en remplissant le formulaire ci-dessous.</p>
 								<h2>Formulaire de commande</h2>
-
+								<p>* champs obligatoires</p>
 								<form method="post" action="https://formspree.io/uniq.cycling@gmail.com">
 									<div class="row gtr-uniform">
 										<div class="col-6 col-12-xsmall">
-											<input type="text" name="order-name" id="order-name" value="" placeholder="Name" required />
+											<input type="text" name="order-name" id="order-name" value="" placeholder="NOM *" required />
 										</div>
 										<div class="col-6 col-12-xsmall">
-											<input type="email" name="order-email" id="order-email" value="" placeholder="Email" required />
+											<input type="text" name="order-firstname" id="order-firstname" value="" placeholder="Prénom *" required />
+										</div>
+
+										<div class="col-6 col-12-xsmall">
+											<input type="phone" name="order-phone" id="order-phone" value="" placeholder="Téléphone *" required />
+										</div>
+										<div class="col-6 col-12-xsmall">
+											<input type="email" name="order-email" id="order-email" value="" placeholder="Email *" required />
 										</div>
 										<!-- Break -->
 										<div class="col-12">
 											<select name="Type" id="type" required >
-												<option value="">- Type -</option>
-												<option value="1">Paire - 799€</option>
-												<option value="1">Avant - 399€</option>
-												<option value="1">Arrière - 449€</option>
-												<option value="1"></option>
+												<option value="paire">Paire - 799€</option>
+												<option value="front">Avant - 399€</option>
+												<option value="rear">Arrière - 449€</option>
 											</select>
 										</div>
 										<!-- Break -->
+										<div class="col-6 col-12-xsmall">
+											<input type="number" min="1" name="order-quantity" id="order-quantity" value="" placeholder="Quantité" required />
+										</div>
+
 										<!--<div class="col-4 col-12-small">
 											<input type="radio" id="type-paire" name="type" checked>
 											<label for="type-paire">Paire</label>
