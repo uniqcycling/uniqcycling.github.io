@@ -57,7 +57,15 @@
 										<div class="col-6 col-12-xsmall">
 											<input type="text" name="order-firstname" id="order-firstname" value="" placeholder="Prénom *" required />
 										</div>
-
+										<div class="col-12">
+											<input type="text" name="order-address" id="order-address" value="" placeholder="Rue *" rows="6" required />
+										</div>
+										<div class="col-6 col-12-xsmall">
+											<input type="number" name="order-postcode" id="order-postcode" value="" placeholder="Code Postal *" required />
+										</div>
+										<div class="col-6 col-12-xsmall">
+											<input type="text" name="order-city" id="order-city" value="" placeholder="Ville *" required />
+										</div>
 										<div class="col-6 col-12-xsmall">
 											<input type="phone" name="order-phone" id="order-phone" value="" placeholder="Téléphone *" required />
 										</div>
@@ -65,8 +73,8 @@
 											<input type="email" name="order-email" id="order-email" value="" placeholder="Email *" required />
 										</div>
 										<!-- Break -->
-										<div class="col-12">
-											<select name="Type" id="type" required >
+										<div class="col-6 col-12-xsmall">
+											<select name="type" id="type" required >
 												<option value="paire">Paire - 799€</option>
 												<option value="front">Avant - 399€</option>
 												<option value="rear">Arrière - 449€</option>
