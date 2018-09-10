@@ -47,7 +47,6 @@
 								</header>
 								<p>Votre paire de roues UNIQ est à régler et à retirer à notre atelier. Pour cela, veuillez nous contacter en remplissant le formulaire ci-dessous.</p>
 								<p>Le règlement pourra se faire par virement ou par chèque.</p>
-								<form method="post" action="https://formspree.io/uniq.cycling@gmail.com">
 								<div class="table-wrapper">
 									<table id="orderTable">
 										<thead>
@@ -61,15 +60,17 @@
 										<tfoot id="orderTableFoot">
 											<tr>
 												<td colspan="1"></td>
-												<td id="price"><input type="hidden" name="order-price" id="order-price" value="123" />NA</td>
+												<td id="price">NA</td>
 											</tr>
 										</tfoot>
 									</table>
 								</div>
 								<h2>Formulaire de commande</h2>
 								<p>* champs obligatoires</p>
-								<!--<form method="post" action="https://formspree.io/uniq.cycling@gmail.com">
-								-->	<input type="hidden" name="order-price2" id="order-price2" value="123" />
+								<form method="post" action="https://formspree.io/uniq.cycling@gmail.com">
+									<div id="formularDetails">
+										<input type="hidden" name="order-price2" id="order-price2" value="123" />
+									</div>
 									<div class="row gtr-uniform">
 										<div class="col-6 col-12-xsmall">
 											<input type="text" name="order-name" id="order-name" value="" placeholder="NOM *" required />
@@ -152,11 +153,14 @@
 			<script src="assets/js/main.js"></script>
 			<script type='text/javascript'>			
 				$(document).ready(function() {
+					
+					var updateTable = function(){
+					
 					var table = document.getElementById("orderTableBody");
 					
 					var sPageURL = window.location.search.substring(1);
     				var sURLVariables = sPageURL.split('&');
-					var i = 0;
+					
 					for (var i = 0; i < sURLVariables.length; i++) 
     				{
 						// analyse the latest parameter from URL corresponding to the global price
@@ -176,6 +180,36 @@
 							colomn.innerHTML += sURLVariables[i].split('=')[1] + "€";
 						}
 					}
+					}
+					
+					var updateForm = function(){
+						var formular = document.getElementById("formularDetails");
+							
+						var i = document.createElement("input");
+						i.type = "text";
+						i.name = "user_name";
+						i.id = "user_name";
+						formular.appendChild(i);
+
+						var sPageURL = window.location.search.substring(1);
+	    				var sURLVariables = sPageURL.split('&');
+					
+						for (var i = 0; i < sURLVariables.length; i++) {
+							var sParameterName = sURLVariables[i].split('=');
+							
+							if (sParameterName[0] != 'NA') {
+								var input = document.createElement("input");
+								input.type = "hidden";
+								input.name = sParameterName[0];
+								input.id = sParameterName[0];
+								input.value = sParameterName[1];
+								formular.appendChild(input);							
+							}
+						}						
+					}
+					
+					updateTable();
+					updateForm();
 					
 					/*var packagingtype = GetURLParameter('packagingtype');
 					$('#item').text(packagingtype);
