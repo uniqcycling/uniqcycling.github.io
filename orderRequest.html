@@ -47,6 +47,30 @@
 								</header>
 								<p>Votre paire de roues UNIQ est à régler et à retirer à notre atelier. Pour cela, veuillez nous contacter en remplissant le formulaire ci-dessous.</p>
 								<p>Le règlement pourra se faire par virement ou par chèque.</p>
+								<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Article(s)</th>
+													<th>Description</th>
+													<th>Prix</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td id="item">Item 1</td>
+													<td></td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
 								<h2>Formulaire de commande</h2>
 								<p>* champs obligatoires</p>
 								<form method="post" action="https://formspree.io/uniq.cycling@gmail.com">
@@ -85,18 +109,6 @@
 											<input type="number" min="1" name="order-quantity" id="order-quantity" value="" placeholder="Quantité" required />
 										</div>
 
-										<!--<div class="col-4 col-12-small">
-											<input type="radio" id="type-paire" name="type" checked>
-											<label for="type-paire">Paire</label>
-										</div>
-										<div class="col-4 col-12-small">
-											<input type="radio" id="type-front" name="type">
-											<label for="type-front">Avant</label>
-										</div>
-										<div class="col-4 col-12-small">
-											<input type="radio" id="type-rear" name="type">
-											<label for="type-rear">Arrière</label>
-										</div>-->
 										<!-- Break -->
 										<div class="col-12">
 											<textarea name="order-message" id="order-message" placeholder="Entrez votre message" rows="6"></textarea>
@@ -165,6 +177,24 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script type='text/javascript'>			
+				$(document).ready(function() {
+					var packagingtype = GetURLParameter('packagingtype');
+					$('#item').text(packagingtype);
 
+					function GetURLParameter(sParam)
+					{
+   			 			var sPageURL = window.location.search.substring(1);
+    					var sURLVariables = sPageURL.split('&');
+    					for (var i = 0; i < sURLVariables.length; i++) 
+    					{
+        					var sParameterName = sURLVariables[i].split('=');
+        					if (sParameterName[0] == sParam) 
+        					{
+            					return sParameterName[1];
+        					}
+    					}
+					}
+			</script>​
 	</body>
 </html>
