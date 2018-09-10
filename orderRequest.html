@@ -48,25 +48,19 @@
 								<p>Votre paire de roues UNIQ est à régler et à retirer à notre atelier. Pour cela, veuillez nous contacter en remplissant le formulaire ci-dessous.</p>
 								<p>Le règlement pourra se faire par virement ou par chèque.</p>
 								<div class="table-wrapper">
-										<table>
+										<table id="orderTable">
 											<thead>
 												<tr>
 													<th>Article(s)</th>
-													<th>Description</th>
 													<th>Prix</th>
 												</tr>
 											</thead>
-											<tbody>
-												<tr>
-													<td id="item">Item 1</td>
-													<td></td>
-													<td>29.99</td>
-												</tr>
+											<tbody id="orderTableBody">
 											</tbody>
-											<tfoot>
+											<tfoot id="orderTableFoot">
 												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
+													<td colspan="1"></td>
+													<td id="price">NA</td>
 												</tr>
 											</tfoot>
 										</table>
@@ -96,18 +90,18 @@
 										<div class="col-6 col-12-xsmall">
 											<input type="email" name="order-email" id="order-email" value="" placeholder="Email *" required />
 										</div>
-										<!-- Break -->
+										<!-- Break
 										<div class="col-6 col-12-xsmall">
 											<select name="type" id="type" required >
 												<option value="paire">Paire - 799€</option>
 												<option value="front">Avant - 399€</option>
 												<option value="rear">Arrière - 449€</option>
 											</select>
-										</div>
-										<!-- Break -->
+										</div>-->
+										<!-- Break 
 										<div class="col-6 col-12-xsmall">
 											<input type="number" min="1" name="order-quantity" id="order-quantity" value="" placeholder="Quantité" required />
-										</div>
+										</div>-->
 
 										<!-- Break -->
 										<div class="col-12">
@@ -123,29 +117,6 @@
 										<input type="hidden" name="_next" value="orderThanks.html" />
 									</div>
 								</form>
-								<!--<form method="post" action="https://formspree.io/uniq.cycling@gmail.com">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="email">Subject</label>
-										<input type="text" name="_subject" id="suject" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>-->
 						</section>
 					</div>
 
@@ -179,7 +150,32 @@
 			<script src="assets/js/main.js"></script>
 			<script type='text/javascript'>			
 				$(document).ready(function() {
-					var packagingtype = GetURLParameter('packagingtype');
+					var table = document.getElementById("orderTableBody");
+					
+					var sPageURL = window.location.search.substring(1);
+    				var sURLVariables = sPageURL.split('&');
+					var i = 0;
+					for (var i = 0; i < sURLVariables.length; i++) 
+    				{
+						// analyse the latest parameter from URL corresponding to the global price
+						var sParameterName = sURLVariables[i].split('=');
+						
+						if (sParameterName[0] == 'globalprice') {
+							$('#price').text(sURLVariables[i].split('=')[1] + "€");
+						}else if (sParameterName[0] != 'NA') {
+							var line = table.insertRow(-1);
+							var colomn = line.insertCell(0);
+							var text = sURLVariables[i].split('=')[0];
+							text = text.replace(/\+/g, ' ');
+							colomn.innerHTML += text;
+							
+							// insert price
+							colomn = line.insertCell(1);
+							colomn.innerHTML += sURLVariables[i].split('=')[1] + "€";
+						}
+					}
+					
+					/*var packagingtype = GetURLParameter('packagingtype');
 					$('#item').text(packagingtype);
 
 					function GetURLParameter(sParam)
@@ -194,7 +190,8 @@
             					return sParameterName[1];
         					}
     					}
-					}
+					}*/
+				});
 			</script>​
 	</body>
 </html>

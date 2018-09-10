@@ -64,26 +64,28 @@
 										</div>
 									</div>
 									<div class="col-4 col-12-small">
-										<h2><span id="currentPrice">799€</span></h2>
-										<h3><s><span id="originalPrice">829€</span></s></h3>
+										<h2><span id="currentPrice">NA€</span></h2>
+										<h3><s><span id="originalPrice">NA€</span></s></h3>
 										<p>En stock</p>
 										<!-- Break -->
+										<select name="packagingtype" id="packagingtype" required >
+											<option data-value="Paire de roues UNIQ For Road" data-currentprice="799" data-originalprice="829">Paire - 799€</option>
+											<option data-value="Roue avant UNIQ For Road" data-currentprice="399" data-originalprice="414">Avant - 399€</option>
+											<option data-value="Roue Arrière UNIQ For Road" data-currentprice="449" data-originalprice="464">Arrière - 449€</option>
+										</select>
+										<input value="Option Michelin Power Endurance" type="checkbox" id="michelinPowerOpt" name="michelinPowerOpt">
+										<label for="michelinPowerOpt">Option Michelin Power</label>
+										<input value="Option Serrages Carbone" type="checkbox" id="skewerOpt" name="skewerOpt">
+										<label for="skewerOpt">Option Serrages Carbone</label>
+										
 										<form action="orderRequest.html" method="get">
-											<select name="packagingtype" id="packagingtype" required >
-												<option value="paire" data-currentprice="799" data-originalprice="829">Paire - 799€</option>
-												<option value="front" data-currentprice="399" data-originalprice="414">Avant - 399€</option>
-												<option value="rear" data-currentprice="449" data-originalprice="464">Arrière - 449€</option>
-											</select>
-											<br>
-											<input type="checkbox" id="michelinPowerOpt" name="michelinPowerOpt">
-											<label for="michelinPowerOpt">Option Michelin Power</label>
-											<br>
-											<input type="checkbox" id="skewerOpt" name="skewerOpt">
-											<label for="skewerOpt">Option Serrages Carbone</label>
-											<!--<button>Commander</button>-->
+											<input type="hidden" value="0" id="packagingDesc" name="name" />
+											<input type="hidden" value="0" id="michelinPowerDesc" name="name" />
+											<input type="hidden" value="0" id="skewerDesc" name="name" />
+											<input type="hidden" value="0" id="globalprice" name="globalprice" />
+											<button class="button primary fit">Commander</button>
 										</form>
 										<!-- Break -->
-										<a href="orderRequest.html" class="button primary fit">Commander</a>
 										<p>A retirer à l'atelier</p>
 									</div>
 								</div>
@@ -230,6 +232,7 @@
 			<script src="assets/js/lightbox-plus-jquery.min.js"></script>
 			<script type='text/javascript'>     
 				$(document).ready(function() {        
+					
 					$('#packagingtype').change(function() {
 						updatePrice();
 					});
@@ -245,12 +248,28 @@
 						price += $('#skewerOpt').prop('checked')===true?40:0;
 						
 						var origPrice = price;
-						price += $('#packagingtype').find(':selected').data('currentprice');
+						var packagingPrice = $('#packagingtype').find(':selected').data('currentprice');
+						price += packagingPrice;
+						
 						$('#currentPrice').text(price + "€");
+						$('#globalprice').attr('value', price);
 						
 						origPrice += $('#packagingtype').find(':selected').data('originalprice');
 						$('#originalPrice').text(origPrice + "€");
+						
+						// update inputs of the formular
+						$('#packagingDesc').attr('name', $('#packagingtype').find(':selected').data('value'));
+						$('#packagingDesc').attr('value', packagingPrice);
+
+						$('#michelinPowerDesc').attr('name', $('#michelinPowerOpt').prop('checked')===true?'Option Michelin Power Endurance':'NA');
+						$('#michelinPowerDesc').attr('value', $('#michelinPowerOpt').prop('checked')===true?110:0);
+
+						$('#skewerDesc').attr('name', $('#skewerOpt').prop('checked')===true?'Option Serrages rapides carbone':'NA');
+						$('#skewerDesc').attr('value', $('#skewerOpt').prop('checked')===true?40:0);
+
 					}
+					
+					updatePrice(); // update price for the first time
 				});
 			</script> 
 	</body>
