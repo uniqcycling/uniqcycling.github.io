@@ -61,7 +61,7 @@
 										<tfoot id="orderTableFoot">
 											<tr>
 												<td colspan="1"></td>
-												<td id="price"><input type="hidden" id="order-price" value="123" />NA</td>
+												<td id="price"><input type="hidden" name="order-price" id="order-price" value="123" />NA</td>
 											</tr>
 										</tfoot>
 									</table>
@@ -69,7 +69,8 @@
 								<h2>Formulaire de commande</h2>
 								<p>* champs obligatoires</p>
 								<!--<form method="post" action="https://formspree.io/uniq.cycling@gmail.com">
-								-->	<div class="row gtr-uniform">
+								-->	<input type="hidden" name="order-price2" id="order-price2" value="123" />
+									<div class="row gtr-uniform">
 										<div class="col-6 col-12-xsmall">
 											<input type="text" name="order-name" id="order-name" value="" placeholder="NOM *" required />
 										</div>
