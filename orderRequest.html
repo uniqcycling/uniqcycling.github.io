@@ -69,7 +69,6 @@
 								<p>* champs obligatoires</p>
 								<form method="post" action="https://formspree.io/uniq.cycling@gmail.com">
 									<div id="formularDetails">
-										<input type="hidden" name="order-price2" id="order-price2" value="123" />
 									</div>
 									<div class="row gtr-uniform">
 										<div class="col-6 col-12-xsmall">
@@ -185,12 +184,6 @@
 					var updateForm = function(){
 						var formular = document.getElementById("formularDetails");
 							
-						var i = document.createElement("input");
-						i.type = "text";
-						i.name = "user_name";
-						i.id = "user_name";
-						formular.appendChild(i);
-
 						var sPageURL = window.location.search.substring(1);
 	    				var sURLVariables = sPageURL.split('&');
 					
