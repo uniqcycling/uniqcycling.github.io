@@ -87,12 +87,12 @@
 										<input value="Option Michelin Power Endurance" type="checkbox" id="michelinPowerOpt" name="michelinPowerOpt">
 										<label for="michelinPowerOpt">Option Michelin Power</label>
 										<input value="Option Disques" type="checkbox" id="discOpt" name="discOpt">
-										<label for="skewerOpt">Option Disques</label>
+										<label for="discOpt">Option Disques Aivee</label>
 										
 										<form action="orderRequest.html" method="get">
 											<input type="hidden" value="0" id="packagingDesc" name="name" />
 											<input type="hidden" value="0" id="michelinPowerDesc" name="name" />
-											<input type="hidden" value="0" id="skewerDesc" name="name" />
+											<input type="hidden" value="0" id="discDesc" name="name" />
 											<input type="hidden" value="0" id="globalprice" name="globalprice" />
 											<button class="button primary fit">Commander</button>
 										</form>
@@ -250,13 +250,13 @@
 					$('#michelinPowerOpt').change(function() {
 						updatePrice();
 					});
-					$('#skewerOpt').change(function() {
+					$('#discOpt').change(function() {
 						updatePrice();
 					});
 					updatePrice = function(){
 						var price = 0;
 						price += $('#michelinPowerOpt').prop('checked')===true?110:0;
-						price += $('#skewerOpt').prop('checked')===true?40:0;
+						price += $('#discOpt').prop('checked')===true?60:0;
 						
 						var origPrice = price;
 						var packagingPrice = $('#packagingtype').find(':selected').data('currentprice');
@@ -275,8 +275,8 @@
 						$('#michelinPowerDesc').attr('name', $('#michelinPowerOpt').prop('checked')===true?'Option Michelin Power Endurance':'NA');
 						$('#michelinPowerDesc').attr('value', $('#michelinPowerOpt').prop('checked')===true?110:0);
 
-						$('#skewerDesc').attr('name', $('#skewerOpt').prop('checked')===true?'Option Serrages rapides carbone':'NA');
-						$('#skewerDesc').attr('value', $('#skewerOpt').prop('checked')===true?40:0);
+						$('#discDesc').attr('name', $('#discOpt').prop('checked')===true?'Option Disque Aivee':'NA');
+						$('#discDesc').attr('value', $('#discOpt').prop('checked')===true?40:0);
 
 					}
 					
