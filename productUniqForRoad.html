@@ -159,7 +159,7 @@
 									</table>
 								</div>
                                 <hr />
-								<h4>Option Michelin Power - 110€</h4>
+								<h4>Option Michelin Power - 100€</h4>
 								<p>Les roues Uniq For Road peuvent être associées à une paire de pneus Michelin Power Endurance noire 23mm ou 25mm et chambres à air Michelin AIRCOMP UltraLight préinstallés.</p>
 								<p>Les pneus Michelin Power Endurance sont le choix idéal pour l'entrainement et les courses. Associés aux chambres à air Michelin AIRCOMP UltraLight, vous obtenez un rendement optimal dans toutes les conditions.</p>
 								<div class="row">
@@ -259,7 +259,7 @@
 					});
 					updatePrice = function(){
 						var price = 0;
-						price += $('#michelinPowerOpt').prop('checked')===true?110:0;
+						price += $('#michelinPowerOpt').prop('checked')===true?100:0;
 						price += $('#skewerOpt').prop('checked')===true?40:0;
 						
 						var origPrice = price;
@@ -277,7 +277,7 @@
 						$('#packagingDesc').attr('value', packagingPrice);
 
 						$('#michelinPowerDesc').attr('name', $('#michelinPowerOpt').prop('checked')===true?'Option Michelin Power Endurance':'NA');
-						$('#michelinPowerDesc').attr('value', $('#michelinPowerOpt').prop('checked')===true?110:0);
+						$('#michelinPowerDesc').attr('value', $('#michelinPowerOpt').prop('checked')===true?100:0);
 
 						$('#skewerDesc').attr('name', $('#skewerOpt').prop('checked')===true?'Option Serrages rapides carbone':'NA');
 						$('#skewerDesc').attr('value', $('#skewerOpt').prop('checked')===true?40:0);
