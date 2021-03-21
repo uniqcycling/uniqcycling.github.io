@@ -85,14 +85,14 @@
 											<option data-value="Roue avant UNIQ For Road Disc" data-currentprice="424" data-originalprice="424">Avant - 424€</option>
 											<option data-value="Roue Arrière UNIQ For Road Disc" data-currentprice="464" data-originalprice="464">Arrière - 464€</option>
 										</select>
-										<input value="Option Michelin Power Endurance" type="checkbox" id="michelinPowerOpt" name="michelinPowerOpt">
-										<label for="michelinPowerOpt">Option Michelin Power</label>
+										<input value="Option Light" type="checkbox" id="lightOpt" name="lightOpt">
+										<label for="lightOpt">Option Light</label>
 										<input value="Option Disques" type="checkbox" id="discOpt" name="discOpt">
 										<label for="discOpt">Option Disques Aivee</label>
 										
 										<form action="orderRequest.html" method="get">
 											<input type="hidden" value="0" id="packagingDesc" name="name" />
-											<input type="hidden" value="0" id="michelinPowerDesc" name="name" />
+											<input type="hidden" value="0" id="lightDesc" name="name" />
 											<input type="hidden" value="0" id="discDesc" name="name" />
 											<input type="hidden" value="0" id="globalprice" name="globalprice" />
 											<button class="button primary fit">Commander</button>
@@ -168,7 +168,26 @@
 									</table>
 								</div>
                                 <hr />
-								<h4>Option Michelin Power - 110€</h4>
+								<h4>Option Light - 100€</h4>
+								<p>Nous vous proposons de remplacer les moyeux Aivee MP2 par la dernière référence Aivee Classic.</p>
+								<p>Cette paire de moyeux du même fabriquant possède un usinage optimisé qui lui permet de gagner 60gr tout en conservant la même robustesse des moyeux Aivee MP2. Vous obtenez ainsi une paire de roues UNIQ For Aero Disc au poids totale de 1490gr en version CenterLock avec la même qualité et robustesse du modèle standard.</p>
+								<div class="row">
+									<div class="col-12 col-12-small">
+										<h6>Caractéristiques des moyeux Aivee Classic</h6>
+										<ul>
+											<li>Compatibilité disques : Centerlock, 6 trous</li>
+											<li>Compatibilité corps de roue-libre : Shimano 10/11v, SRAM XDR</li>
+											<li>Gain de poids : 60gr</li>
+										</ul>
+									</div>
+								</div>
+								<div class="box alt">
+									<div class="row gtr-50 gtr-uniform">
+										<div class="col-3"><span class="image fit"><a href="images/classic-pair.jpg" data-lightbox="example-2"><img src="images/classic-pair.jpg" alt="" /></a></span></div>
+									</div>
+								</div>
+								<!--<p><a href="https://bike.michelin.com/fr/produits/michelin-power-endurance">Plus d'information sur les pneus Michelin power Endurance</a></p>-->
+								<!--<h4>Option Michelin Power - 110€</h4>
 								<p>Les roues Uniq For Road Disc peuvent être associées à une paire de pneus Michelin Power Endurance noire 23mm ou 25mm et chambres à air Michelin AIRCOMP UltraLight préinstallées.</p>
 								<p>Les pneus Michelin Power Endurance sont le choix idéal pour l'entraînement et les courses. Associés aux chambres à air Michelin AIRCOMP UltraLight, vous obtenez un rendement optimal dans toutes les conditions.</p>
 								<div class="row">
@@ -201,7 +220,7 @@
 									</div>
 								</div>
 								<p><a href="https://bike.michelin.com/fr/produits/michelin-power-endurance">Plus d'information sur les pneus Michelin power Endurance</a></p>
-								<hr />
+							--><hr />
 								<h4>Option Disques Aivee - 60€</h4>
 								<p>Associez vos moyeux Aivee avec les nouveaux disques de la même marque. Les disques Aivee sont en inox 440c trempé et sont disponibles en 140, 160 et 180 mm, fixation 6 trous.</p>
 								<ul>
@@ -258,7 +277,7 @@
 					$('#packagingtype').change(function() {
 						updatePrice();
 					});
-					$('#michelinPowerOpt').change(function() {
+					$('#lightOpt').change(function() {
 						updatePrice();
 					});
 					$('#discOpt').change(function() {
@@ -266,7 +285,7 @@
 					});
 					updatePrice = function(){
 						var price = 0;
-						price += $('#michelinPowerOpt').prop('checked')===true?110:0;
+						price += $('#lightOpt').prop('checked')===true?100:0;
 						price += $('#discOpt').prop('checked')===true?60:0;
 						
 						var origPrice = price;
@@ -283,8 +302,8 @@
 						$('#packagingDesc').attr('name', $('#packagingtype').find(':selected').data('value'));
 						$('#packagingDesc').attr('value', packagingPrice);
 
-						$('#michelinPowerDesc').attr('name', $('#michelinPowerOpt').prop('checked')===true?'Option Michelin Power Endurance':'NA');
-						$('#michelinPowerDesc').attr('value', $('#michelinPowerOpt').prop('checked')===true?110:0);
+						$('#lightDesc').attr('name', $('#lightOpt').prop('checked')===true?'Option Light':'NA');
+						$('#lightDesc').attr('value', $('#lightOpt').prop('checked')===true?110:0);
 
 						$('#discDesc').attr('name', $('#discOpt').prop('checked')===true?'Option Disque Aivee':'NA');
 						$('#discDesc').attr('value', $('#discOpt').prop('checked')===true?60:0);
