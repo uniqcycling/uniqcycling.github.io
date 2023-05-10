@@ -85,8 +85,8 @@
 											<option data-value="Roue avant UNIQ For Road Disc" data-currentprice="499" data-originalprice="499">Avant - 499€</option>
 											<option data-value="Roue Arrière UNIQ For Road Disc" data-currentprice="549" data-originalprice="549">Arrière - 549€</option>
 										</select>
-										<!--<input value="Option Light" type="checkbox" id="lightOpt" name="lightOpt">
-										<label for="lightOpt">Option Light</label>-->
+										<input value="Option Light" type="checkbox" id="lightOpt" name="lightOpt">
+										<label for="lightOpt">Option Light & Color</label>
 										<input value="Option Disques" type="checkbox" id="discOpt" name="discOpt">
 										<label for="discOpt">Option Disques Aivee</label>
 										
@@ -169,16 +169,19 @@
 										</tbody>
 									</table>
 								</div>
-                                <!--<hr />
-								<h4>Option Light & Colored - 180€</h4>
-								<p>Nous vous proposons de remplacer les moyeux Aivee Classic par leur modèle Edition One.</p>
-								<p>Cette paire de moyeux du même fabriquant disponible en plusieurs couleurs possède un usinage optimisé qui lui permet de gagner 60gr tout en conservant la même robustesse des moyeux Aivee MP2. Vous obtenez ainsi une paire de roues UNIQ For Aero Disc au poids totale de 1490gr en version CenterLock avec la même qualité et robustesse du modèle standard.</p>
+                                <hr />
+								<h4>Option Light & Color - 200€</h4>
+								<p>Nous vous proposons de remplacer les moyeux Aivee Classic par la référence Edition One avec la posiblité de choisir la couleur du moyeu ainsi que les têtes de rayon.</p>
+								<p>Cette paire de moyeux du même fabriquant possède un usinage optimisé qui lui permet de gagner 60gr tout en conservant la même robustesse des moyeux Aivee Classic. Vous obtenez ainsi une paire de roues UNIQ For Road Disc au poids totale de 1410gr en version CenterLock avec la même qualité et robustesse du modèle standard.</p>
+								<p>De plus, les moyeux Edition One sont disponibles en différentes couleurs d'anodisation: noir, rouge, bleu, orange, gris ou violet.</p>
+								<p>N'hésitez pas à nous contacter pour vous présenter les différentes couleurs de tête de rayons disponibles.</p>
+								<p><a href="https://www.aivee.fr/fr/p/28-3367-edition-one-sl-cl-arriere.html#/1-percage-24/11-couleur-noir/43-axe_arriere-qr_135mm/49-corps_de_roue_libre-shimano_hg_11v/61-roulements-acier_skf">Plus d'information sur les couleurs disponibles</a></p>
 								<div class="row">
 									<div class="col-12 col-12-small">
 										<h6>Caractéristiques des moyeux Aivee Edition One</h6>
 										<ul>
 											<li>Compatibilité disques : Centerlock, 6 trous</li>
-											<li>Compatibilité corps de roue-libre : Shimano 10/11v, SRAM XDR</li>
+											<li>Compatibilité corps de roue-libre : Shimano 10/11v, Microspline, SRAM XDR</li>
 											<li>Gain de poids : 60gr</li>
 										</ul>
 									</div>
@@ -187,7 +190,7 @@
 									<div class="row gtr-50 gtr-uniform">
 										<div class="col-3"><span class="image fit"><a href="images/classic-pair.jpg" data-lightbox="example-2"><img src="images/classic-pair.jpg" alt="" /></a></span></div>
 									</div>
-								</div>-->
+								</div>
 								<!--<p><a href="https://bike.michelin.com/fr/produits/michelin-power-endurance">Plus d'information sur les pneus Michelin power Endurance</a></p>-->
 								<!--<h4>Option Michelin Power - 110€</h4>
 								<p>Les roues Uniq For Road Disc peuvent être associées à une paire de pneus Michelin Power Endurance noire 23mm ou 25mm et chambres à air Michelin AIRCOMP UltraLight préinstallées.</p>
@@ -287,7 +290,7 @@
 					});
 					updatePrice = function(){
 						var price = 0;
-						price += $('#lightOpt').prop('checked')===true?100:0;
+						price += $('#lightOpt').prop('checked')===true?200:0;
 						price += $('#discOpt').prop('checked')===true?60:0;
 						
 						var origPrice = price;
@@ -305,7 +308,7 @@
 						$('#packagingDesc').attr('value', packagingPrice);
 
 						$('#lightDesc').attr('name', $('#lightOpt').prop('checked')===true?'Option Light':'NA');
-						$('#lightDesc').attr('value', $('#lightOpt').prop('checked')===true?110:0);
+						$('#lightDesc').attr('value', $('#lightOpt').prop('checked')===true?200:0);
 
 						$('#discDesc').attr('name', $('#discOpt').prop('checked')===true?'Option Disque Aivee':'NA');
 						$('#discDesc').attr('value', $('#discOpt').prop('checked')===true?60:0);
