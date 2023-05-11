@@ -81,12 +81,12 @@
 										<p>Sur commande</p>
 										<!-- Break -->
 										<select name="packagingtype" id="packagingtype" required >
-											<option data-value="Paire de roues UNIQ For Aero" data-currentprice="1129" data-originalprice="1129">Paire - 1129€</option>
+											<option data-value="Paire de roues UNIQ For Aero" data-currentprice="1149" data-originalprice="1129">Paire - 1149€</option>
 											<option data-value="Roue avant UNIQ For Aero" data-currentprice="549" data-originalprice="549">Avant - 549€</option>
 											<option data-value="Roue Arrière UNIQ For Aero" data-currentprice="619" data-originalprice="619">Arrière - 619€</option>
 										</select>
-										<!--<input value="Option Light" type="checkbox" id="lightOpt" name="lightOpt">
-										<label for="lightOpt">Option Light</label>-->
+										<input value="Option Light" type="checkbox" id="lightOpt" name="lightOpt">
+										<label for="lightOpt">Option Light & Color</label>
 										<input value="Option Disques" type="checkbox" id="discOpt" name="discOpt">
 										<label for="discOpt">Option Disques Aivee</label>
 										
@@ -160,25 +160,32 @@
 										</tbody>
 									</table>
 								</div>
-                                <!--<hr />
-								<h4>Option Light - 100€</h4>
-								<p>Nous vous proposons de remplacer les moyeux Aivee MP2 par la dernière référence Aivee Classic.</p>
-								<p>Cette paire de moyeux du même fabriquant possède un usinage optimisé qui lui permet de gagner 60gr tout en conservant la même robustesse des moyeux Aivee MP2. Vous obtenez ainsi une paire de roues UNIQ For Aero Disc au poids totale de 1490gr en version CenterLock avec la même qualité et robustesse du modèle standard.</p>
+                                <hr />
+								<h4>Option Light & Color - 200€</h4>
+								<p>Nous vous proposons de remplacer les moyeux Aivee Classic par la référence <a href="https://www.aivee.fr/fr/p/104-8349-edition-one-sl-arriere.html#/1-percage-24/33-couleur-violet/46-axe_arriere-12x148mm/49-corps_de_roue_libre-shimano_hg_11v/61-roulements-acier_skf">Aivee Edition One</a> avec la posiblité de choisir la couleur du moyeu ainsi que les têtes de rayon.</p>
+								<p>Cette paire de moyeux du même fabriquant possède un usinage optimisé qui lui permet de gagner 60gr tout en conservant la même robustesse des moyeux Aivee Classic. Vous obtenez ainsi une paire de roues UNIQ For Road Disc au poids totale de 1410gr en version CenterLock tout en conservant la robustesse du montage standard et en améliorant encore ses caractéristiques.</p>
+								<p>De plus, vous pourrez ainsi apporter de la personnalisation à votre montage en choisissant parmis les couleurs des moyeux Edition One: noir, rouge, bleu, orange, gris ou violet.</p>
+								<p>N'hésitez pas à nous contacter pour vous présenter les différentes couleurs de tête de rayons disponibles.</p>
+								<p><a href="https://www.aivee.fr/fr/p/28-3367-edition-one-sl-cl-arriere.html#/1-percage-24/11-couleur-noir/43-axe_arriere-qr_135mm/49-corps_de_roue_libre-shimano_hg_11v/61-roulements-acier_skf">Plus d'information sur les couleurs disponibles</a></p>
 								<div class="row">
 									<div class="col-12 col-12-small">
-										<h6>Caractéristiques des moyeux Aivee Classic</h6>
+										<h6>Caractéristiques des moyeux Aivee Edition One</h6>
 										<ul>
 											<li>Compatibilité disques : Centerlock, 6 trous</li>
-											<li>Compatibilité corps de roue-libre : Shimano 10/11v, SRAM XDR</li>
-											<li>Gain de poids : 70gr</li>
+											<li>Compatibilité corps de roue-libre : Shimano 10/11v, Microspline, SRAM XDR</li>
+											<li>Gain de poids : 60gr</li>
 										</ul>
 									</div>
 								</div>
 								<div class="box alt">
 									<div class="row gtr-50 gtr-uniform">
-										<div class="col-3"><span class="image fit"><a href="images/classic-pair.jpg" data-lightbox="example-2"><img src="images/classic-pair.jpg" alt="" /></a></span></div>
+										<div class="col-2"><span class="image fit"><a href="images/edition-one-sl-cl-arriere_noir.jpg" data-lightbox="example-2"><img src="images/edition-one-sl-cl-arriere_noir.jpg" alt="" /></a></span></div>
+										<div class="col-2"><span class="image fit"><a href="images/edition-one-sl-cl-arriere_bleu.jpg" data-lightbox="example-2"><img src="images/edition-one-sl-cl-arriere_bleu.jpg" alt="" /></a></span></div>
+										<div class="col-2"><span class="image fit"><a href="images/edition-one-sl-cl-arriere_rouge.jpg" data-lightbox="example-2"><img src="images/edition-one-sl-cl-arriere_rouge.jpg" alt="" /></a></span></div>
+										<div class="col-2"><span class="image fit"><a href="images/edition-one-sl-cl-arriere_orange.jpg" data-lightbox="example-2"><img src="images/edition-one-sl-cl-arriere_orange.jpg" alt="" /></a></span></div>
+										<div class="col-2"><span class="image fit"><a href="images/edition-one-sl-arriere_mauve.jpg" data-lightbox="example-2"><img src="images/edition-one-sl-arriere_mauve.jpg" alt="" /></a></span></div>
 									</div>
-								</div>-->
+								</div>
 								<!--
 								<p><a href="https://bike.michelin.com/fr/produits/michelin-power-endurance">Plus d'information sur les pneus Michelin power Endurance</a></p> -->
 								<hr />
@@ -246,7 +253,7 @@
 					});
 					updatePrice = function(){
 						var price = 0;
-						price += $('#lightOpt').prop('checked')===true?100:0;
+						price += $('#lightOpt').prop('checked')===true?200:0;
 						price += $('#discOpt').prop('checked')===true?60:0;
 						
 						var origPrice = price;
@@ -264,7 +271,7 @@
 						$('#packagingDesc').attr('value', packagingPrice);
 
 						$('#lightDesc').attr('name', $('#lightOpt').prop('checked')===true?'Option Light':'NA');
-						$('#lightDesc').attr('value', $('#lightOpt').prop('checked')===true?100:0);
+						$('#lightDesc').attr('value', $('#lightOpt').prop('checked')===true?200:0);
 
 						$('#discDesc').attr('name', $('#discOpt').prop('checked')===true?'Option Disque Aivee':'NA');
 						$('#discDesc').attr('value', $('#discOpt').prop('checked')===true?40:0);
